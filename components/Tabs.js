@@ -13,10 +13,10 @@ const topics = document.querySelector('.topics');
 axios.get('https://lambda-times-api.herokuapp.com/topics')
 .then(res => {
     for(let topic in res.data.topics){
-        console.log(res.data.topics[topic])
         topics.appendChild(tabCreator(res.data.topics[topic]));
     }
-});
+})
+.catch(err => console.log(err))
 
 function tabCreator(topic){
     const tab = document.createElement('div');
