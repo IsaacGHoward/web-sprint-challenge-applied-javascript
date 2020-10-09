@@ -29,6 +29,12 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
         }
     }
 })
+.catch(err => {
+    alert(err);
+    const err_msg = document.createElement('h2');
+    err_msg.innerHTML = err;
+    cards.appendChild(err_msg);
+})
 function cardCreator(article){
     const card = document.createElement('div');
     card.classList.add('card');
